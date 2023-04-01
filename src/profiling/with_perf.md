@@ -76,12 +76,12 @@ For example, to measure the clap-rs test, you might do:
 
 ```bash
 ./target/release/collector                                      \
-  --output-repo /path/to/place/output                           \
-  profile perf-record                                           \
-  --rustc /path/to/rustc/executable/from/your/build/directory   \
+  profile_local perf-record                                     \
+  /path/to/rustc/executable/from/your/build/directory           \
   --cargo `which cargo`                                         \
-  --filter clap-rs                                              \
+  --include clap                                                \
   --builds Check                                                \
+  --out-dir /path/to/place/output                               \
 ```
 
 You can also use that same command to use cachegrind or other profiling tools.
